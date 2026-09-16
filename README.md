@@ -1,26 +1,21 @@
-# Las 12 Palabras de San Benito — LATAM
+# El Grimorio de las 12 Palabras de San Benito — LATAM
 
-Página de ventas estática em espanhol neutro, pronta para GitHub Pages ou Vercel.
+Versão em espanhol neutro da página de vendas original, preservando a mesma estrutura de conversão para público frio, a mesma ordem das 13 seções, o design e os comportamentos da versão em português.
 
-## Configuração antes do lançamento
+## Antes de publicar
 
-Edite `config.js` e informe:
+Abra `index.html` e ajuste somente estes dados comerciais:
 
-- `checkoutDefault`: checkout geral para países não mapeados;
-- `checkoutByCountry`: links específicos para México, Colômbia, Peru e Chile;
-- `supportEmail`: e-mail real de suporte;
-- `metaPixelId`: ID do Pixel da Meta, se aplicável.
+1. `data-checkout-url`: substitua pelo checkout LATAM definitivo.
+2. Todos os atributos `href` com o checkout antigo: substitua pelo mesmo checkout LATAM.
+3. `META_PIXEL_ID`: substitua pelo Pixel usado na campanha LATAM, caso seja diferente.
+4. Link `wa.me`: confirme o número de atendimento e mantenha a mensagem em espanhol.
+5. Preço: o arquivo está preparado com `US$ 7,90`; altere o texto e os valores do Pixel se sua oferta usar outro preço.
 
-Os preços também ficam em `script.js`, dentro do objeto `prices`. Eles precisam corresponder exatamente ao valor configurado no checkout de cada país.
+## Publicação
 
-## Publicação na Vercel
+Suba `index.html`, `vercel.json` e a pasta `assets` para a raiz do repositório no GitHub. Na Vercel, importe o repositório sem comando de build.
 
-Importe o repositório na Vercel. O projeto é estático e não exige comando de build. A pasta de saída é a raiz do repositório.
+## Observação sobre os depoimentos
 
-## Estrutura
-
-- `index.html`: copy e estrutura da página;
-- `styles.css`: identidade visual e responsividade;
-- `script.js`: seletor de país, preço, CTA e eventos;
-- `config.js`: URLs comerciais e integrações;
-- `assets/`: capa do ebook e imagem do complemento em áudio.
+Os três vídeos foram mantidos exatamente como na página original. Se você já tiver depoimentos em espanhol, troque apenas os IDs presentes em `data-youtube-id`, sem alterar a seção.
